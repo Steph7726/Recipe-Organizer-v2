@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Organizer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <h1>Recipe Organizer</h1>
+
+    <!-- Authentication -->
+    <div id="auth">
+      <button onclick="login()">Login</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Recipe Form -->
+    <div id="recipe-form">
+      <input type="text" id="recipe-name" placeholder="Recipe Name" />
+      <input type="text" id="recipe-category" placeholder="Category" />
+      <textarea
+        id="recipe-ingredients"
+        placeholder="Ingredients (comma-separated)"
+      ></textarea>
+      <button onclick="addRecipe()">Add Recipe</button>
+    </div>
+
+    <!-- Recipe List -->
+    <div id="recipe-list"></div>
+
+    <!-- QR Code -->
+    <div id="qr-code-container">
+      <button onclick="generateQRCode()">Generate QR Code</button>
+      <canvas id="qr-code"></canvas>
+    </div>
+
+    <!-- Chatbot -->
+    <div id="chatbot">
+      <input type="text" id="chat-input" placeholder="Ask for a recipe..." />
+      <button onclick="askChatbot()">Ask</button>
+      <div id="chat-output"></div>
+    </div>
+
+    <script src="firebase-config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="qr-code.js"></script>
+    <script src="chatbot.js"></script>
+  </body>
+</html>
